@@ -66,4 +66,4 @@ set -g fish_color_user brgreen
 set -g fish_color_valid_path --underline
 
 # Init Starship
-eval (starship init fish)
+starship init fish | source

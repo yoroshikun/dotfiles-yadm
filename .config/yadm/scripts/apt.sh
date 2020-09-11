@@ -2,7 +2,7 @@
 
 # Defaults
 add-apt-repository universe
-apt install curl wget git fonts-firacode apt-transport-https pass -y
+apt install curl wget git fonts-firacode apt-transport-https pass direnv -y
 
 # Add to sources
 echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
@@ -51,3 +51,10 @@ Exec=$HOME/.local/bin/firefox-dev %u
 Name=Open a New Private Window
 Exec=$HOME/.local/bin/firefox-dev --private-window %u
 EOL
+
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+sudo mkdir $HOME/.local/bin
+
+sudo ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
+cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications
+sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty.desktop

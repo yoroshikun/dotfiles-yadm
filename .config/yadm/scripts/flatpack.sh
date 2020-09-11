@@ -5,7 +5,4 @@ flatpak remote-add --if-not-exists plex-media-player https://flatpak.knapsu.eu/p
 
 
 flatpak install plex-media-player tv.plex.PlexMediaPlayer -y --noninteractive
-flatpak install flathub com.discordapp.Discord
-flatpak install flathub com.slack.Slack
-flatpak install flathub com.github.wwmm.pulseeffects
-flatpak install flathub com.visualstudio.code
+flatpak install flathub com.github.wwmm.pulseeffects -y --noninteractive

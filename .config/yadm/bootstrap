@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+system_type=$(uname -s)
 
 red='\e[1;31m'
 mag='\e[1;35m'

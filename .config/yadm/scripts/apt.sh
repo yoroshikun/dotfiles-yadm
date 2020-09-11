@@ -1,23 +1,26 @@
 #!/bin/sh
 
 # Defaults
-sudo add-apt-repository universe
-sudo apt install curl wget git fonts-firacode -y
+add-apt-repository universe
+apt install curl wget git fonts-firacode apt-transport-https pass -y
 
 # Add to sources
 echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
-sudo wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
+wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
 curl https://build.opensuse.org/projects/home:manuelschneid3r/public_key | sudo apt-key add -
-sudo wget -nv https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_20.04/Release.key -O "/etc/apt/trusted.gpg.d/home:manuelschneid3r.asc"
+wget -nv https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_20.04/Release.key -O "/etc/apt/trusted.gpg.d/home:manuelschneid3r.asc"
 
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+rm packages.microsoft.gpg
 
 
 # Update sources
-sudo apt update
+apt update
 
 # Install newly sourced
-sudo apt install insomnia -y 
-sudo apt install albert -y
+apt install insomnia albert code -y 
 
 # Special
 

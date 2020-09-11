@@ -1,5 +1,7 @@
 #!/bin/sh
 
+system_type=$(uname -s)
+
 if [ "$system_type" = "Darwin" ]; then
     # enable Key Repeat
     defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false

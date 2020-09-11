@@ -1,5 +1,7 @@
 #!/bin/sh
 
+system_type=$(uname -s)
+
 # install common extensions
 
 code --install-extension aaron-bond.better-comments
@@ -19,19 +21,19 @@ code --install-extension liviuschera.noctis
 code --install-extension mariusschulz.yarn-lock-syntax
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension ms-vscode-remote.remote-containers
-code --install-extenions ms-vsliveshare.vsliveshare
+code --install-extension ms-vsliveshare.vsliveshare
 code --install-extension octref.vetur
 code --install-extension PKief.material-icon-theme
 code --install-extension Prisma.prisma
 code --install-extension rust-lang.rust
-code --install-extension robertohuertasm.vscode-icons
+code --install-extension vscode-icons-team.vscode-icons
 code --install-extension shalldie.background
 code --install-extension simsim0709.over-night-owl
 code --install-extension theumletteam.umlet
 code --install-extension vincaslt.highlight-matching-tag
 code --install-extension vsmobile.vscode-react-native
 code --install-extension wix.vscode-import-cost
-code --install-extention tyriar.sort-lines
+code --install-extension tyriar.sort-lines
 
 if [ "$system_type" = "Darwin" ]; then
     # fix the font

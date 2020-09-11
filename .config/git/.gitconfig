@@ -1,0 +1,16 @@
+[core]
+    excludesfile = ~/.gitignore_global
+	editor = vim
+[user]
+	name = Drew Hutton
+	email = drew.business2308@gmail.com
+    username = yoroshikun
+[color]
+    ui = true
+[push]
+    default = current
+
+[alias]
+    statsu = status
+    push-up = "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
+    push-with-lease = push --force-with-lease

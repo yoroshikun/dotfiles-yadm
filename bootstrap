@@ -1,0 +1,44 @@
+#!/bin/sh
+
+red='\e[1;31m'
+mag='\e[1;35m'
+end='\e[0m'
+bld='\e[1m'
+dim='\e[2m'
+
+printf "${bld}Note:${end} ${dim} The installation of these dotfiles may take an extended period of time, expecially when installing apt, flatpac, brew and brew cask jobs"
+printf "continue install of dotfiles? ${bld}[y/n]${end} ${red}>>${end} "
+
+while true; do
+  read yn
+  case $yn in
+    [Yy]*) break ;;
+    [Nn]*) exit ;;
+    *) printf "${bld}[y/n]${end} ${red}>>${end} " ;;
+  esac
+done
+
+source './scripts/homebrew.sh'
+
+if [ "$system_type" = "Linux" ]; then
+    source './scripts/apt.sh'
+
+    source './scripts/flatpack.sh'
+
+    source './scripts/update_fs_watches.sh'
+fi
+
+source './scripts/brew.sh'
+
+source './scripts/brew-cask.sh'
+
+source './scripts/osx-defaults.sh'
+
+source './scripts/vscode.sh'
+
+source './scripts/fish.sh'
+
+source './scripts/asdf.sh'
+
+printf "${mag}[done]${end} | you might want to restart your computer"
+printf "${dim} If not already remember to set fish as your default console${end}"

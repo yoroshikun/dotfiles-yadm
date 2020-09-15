@@ -27,6 +27,8 @@ if [ "$system_type" = "Linux" ]; then
 
     source './scripts/flatpack.sh'
 
+    source './scripts/snap.sh'
+
     source './scripts/update_fs_watches.sh'
 fi
 

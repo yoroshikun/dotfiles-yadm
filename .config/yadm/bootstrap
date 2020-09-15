@@ -44,5 +44,7 @@ source './scripts/fish.sh'
 
 source './scripts/asdf.sh'
 
+source './scripts/bash.sh'
+
 printf "${mag}[done]${end} | you might want to restart your computer"
 printf "${dim} If not already remember to set fish as your default console${end}"
